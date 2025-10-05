@@ -19,13 +19,11 @@ RUN chmod +x mvnw
 # Build the application
 RUN ./mvnw clean package -DskipTests -B
 
-# Create runtime image
-FROM openjdk:17-jre-slim
+# Move JAR to app root
+RUN cp target/resume-ai-backend-0.0.1-SNAPSHOT.jar /app/app.jar
 
+# Set working directory back to app root
 WORKDIR /app
-
-# Copy the JAR file
-COPY --from=0 /app/resume-ai-backend/target/resume-ai-backend-0.0.1-SNAPSHOT.jar app.jar
 
 # Expose port
 EXPOSE 8080
