@@ -1,0 +1,8 @@
+target/
+.git/
+.gitignore
+README.md
+DEPLOYMENT.md
+resume_frontend/
+node_modules/
+*.log
