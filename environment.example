@@ -1,0 +1,7 @@
+# Backend Environment Variables
+OPENAI_API_KEY=your_openai_api_key_here
+OPENAI_MODEL=gpt-3.5-turbo
+FRONTEND_URL=http://localhost:3000
+
+# Frontend Environment Variables  
+VITE_API_URL=http://localhost:8080
