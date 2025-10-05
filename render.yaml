@@ -4,7 +4,6 @@ services:
     env: docker
     plan: free
     dockerfilePath: ./resume-ai-backend/Dockerfile
-    rootDir: ./resume-ai-backend
     envVars:
       - key: OPENAI_API_KEY
         sync: false
@@ -17,7 +16,6 @@ services:
     env: docker
     plan: free
     dockerfilePath: ./resume_frontend/Dockerfile
-    rootDir: ./resume_frontend
     envVars:
       - key: VITE_API_URL
         value: https://resume-ai-backend.onrender.com
