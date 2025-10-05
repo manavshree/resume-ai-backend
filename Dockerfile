@@ -7,8 +7,11 @@ RUN apt-get update && apt-get install -y maven && rm -rf /var/lib/apt/lists/*
 # Set working directory
 WORKDIR /app
 
-# Copy all files from the backend directory
-COPY . .
+# Copy backend files
+COPY resume-ai-backend/ ./resume-ai-backend/
+
+# Set working directory to backend
+WORKDIR /app/resume-ai-backend
 
 # Make mvnw executable
 RUN chmod +x mvnw
@@ -22,7 +25,7 @@ FROM openjdk:17-jre-slim
 WORKDIR /app
 
 # Copy the JAR file
-COPY --from=0 /app/target/resume-ai-backend-0.0.1-SNAPSHOT.jar app.jar
+COPY --from=0 /app/resume-ai-backend/target/resume-ai-backend-0.0.1-SNAPSHOT.jar app.jar
 
 # Expose port
 EXPOSE 8080

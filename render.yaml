@@ -4,7 +4,6 @@ services:
     env: docker
     plan: free
     dockerfilePath: ./Dockerfile
-    rootDir: ./resume-ai-backend
     envVars:
       - key: OPENAI_API_KEY
         sync: false
