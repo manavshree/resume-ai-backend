@@ -3,19 +3,10 @@ services:
     name: resume-ai-backend
     env: docker
     plan: free
-    dockerfilePath: ./resume-ai-backend/Dockerfile
+    dockerfilePath: ./Dockerfile
     envVars:
       - key: OPENAI_API_KEY
         sync: false
       - key: FRONTEND_URL
         value: https://resume-frontend.onrender.com
     healthCheckPath: /actuator/health
-
-  - type: web
-    name: resume-frontend
-    env: docker
-    plan: free
-    dockerfilePath: ./resume_frontend/Dockerfile
-    envVars:
-      - key: VITE_API_URL
-        value: https://resume-ai-backend.onrender.com
